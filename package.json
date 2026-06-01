@@ -1,0 +1,18 @@
+{
+  "name": "citytech-bootcamp",
+  "version": "1.0.0",
+  "description": "Documentation, slides, and supporting files for the CityTech 12-week summer coding bootcamp.",
+  "private": true,
+  "scripts": {
+    "build:diagrams": "bash ./scripts/build-diagrams.sh",
+    "build:slides": "yarn build:diagrams && marp --config-file ./marp.config.js --input-dir ./slides --pdf --allow-local-files",
+    "watch:slides": "marp --config-file ./marp.config.js --input-dir ./slides --pdf --allow-local-files --watch",
+    "preview:slides": "marp --config-file ./marp.config.js --input-dir ./slides --server"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.1.2",
+    "@mermaid-js/mermaid-cli": "^11.15.0",
+    "puppeteer": "^25.1.0"
+  },
+  "packageManager": "yarn@4.13.0+sha512.5c20ba010c99815433e5c8453112165e673f1c7948d8d2b267f4b5e52097538658388ebc9f9580656d9b75c5cc996f990f611f99304a2197d4c56d21eea370e7"
+}

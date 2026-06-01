@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Yarn (Berry, node-modules linker) — keep config & committed assets,
+# ignore install state and caches
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.yarn/cache
+.yarn/unplugged
+.yarn/install-state.gz
+.yarn/build-state.yml
+
+# Claude Code local (machine-specific) settings
+.claude/settings.local.json
+
+# OS
+.DS_Store
