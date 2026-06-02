@@ -1,0 +1,6 @@
+flowchart TB
+  B["Shared file on main"] --> A["feature-a edits line 3"]
+  B --> C["feature-b edits line 3"]
+  A --> M{{git merge}}
+  C --> M
+  M --> X["CONFLICT: same line changed two ways"]
