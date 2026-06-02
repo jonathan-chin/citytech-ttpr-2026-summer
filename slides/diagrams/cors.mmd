@@ -1,0 +1,8 @@
+sequenceDiagram
+  participant E as evil.com (JS in your browser)
+  participant Br as Your Browser
+  participant Bank as bank.com
+  E->>Br: fetch("https://bank.com/account")
+  Br->>Bank: request + your bank.com cookies
+  Bank-->>Br: your private account data
+  Br--xE: Blocked — CORS won't let evil.com read it

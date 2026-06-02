@@ -1,0 +1,15 @@
+flowchart LR
+  subgraph NO["No SPA — full page reload"]
+    direction TB
+    H1[Header] ~~~ N1[Nav] ~~~ C1[Content] ~~~ F1[Footer]
+  end
+  subgraph YES["SPA — only the content reloads"]
+    direction TB
+    H2[Header] ~~~ N2[Nav] ~~~ C2[Content] ~~~ F2[Footer]
+  end
+  NO ~~~ YES
+  class H1,N1,C1,F1 reload
+  class H2,N2,F2 keep
+  class C2 reload
+  classDef reload fill:#ffd9d9,stroke:#cc0000,color:#000
+  classDef keep fill:#d9f2d9,stroke:#2e7d32,color:#000

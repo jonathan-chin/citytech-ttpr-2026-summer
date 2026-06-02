@@ -42,8 +42,9 @@ To add a diagram:
 ### Building
 
 ```bash
-yarn install        # first time only
-yarn build:slides   # render diagrams, then convert every slides/*.md → slides/*.pdf
+yarn install                 # first time only
+yarn build:slides            # render diagrams, then build every slides/*.md → *.pdf
+yarn build:day 2026-06-02    # build just one day's deck → slides/2026-06-02.pdf
 ```
 
 Other helpers:
@@ -51,6 +52,9 @@ Other helpers:
 - `yarn build:diagrams` — render `slides/diagrams/*.mmd` → `*.svg` only
 - `yarn watch:slides` — rebuild PDFs on save
 - `yarn preview:slides` — live preview server in the browser
+
+`build:day` accepts the date with or without the extension
+(`2026-06-02` or `2026-06-02.md`).
 
 > Both the PDF export and Mermaid rendering use a headless Chromium under the
 > hood (via Marp CLI / mermaid-cli + Puppeteer), downloaded automatically on

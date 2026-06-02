@@ -1,9 +1,10 @@
 // Marp CLI configuration.
 // See https://github.com/marp-team/marp-cli#configuration-file
 module.exports = {
-  // Convert every Markdown file under ./slides into a sibling PDF.
-  inputDir: './slides',
-  output: undefined, // keep PDFs alongside their source .md (slides/YYYY-MM-DD.pdf)
+  // The input dir / file is passed on the CLI (see package.json scripts) so we
+  // can build either every deck or a single day. Keep PDFs alongside their
+  // source .md (slides/YYYY-MM-DD.pdf).
+  output: undefined,
   allowLocalFiles: true,
   pdf: true,
   // Allow raw HTML in slides so we can embed Mermaid diagrams
