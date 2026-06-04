@@ -66,6 +66,16 @@ Other helpers:
 curriculum: full-stack web development, AI-assisted coding, secure development,
 data science, networking & security, and a student-driven capstone.
 
+## License
+
+This repository is **dual-licensed**:
+
+- **Course content** (slides, documentation, diagrams) — [CC BY-NC-SA 4.0](LICENSE):
+  share and adapt with attribution, non-commercially, and under the same license.
+- **Build tooling** (`scripts/`, `marp.config.js`, `package.json`) — [MIT](LICENSE).
+
+See [`LICENSE`](LICENSE) for full terms.
+
 ---
 
 ## A note on AI assistance
