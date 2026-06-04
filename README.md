@@ -1,5 +1,7 @@
 # CityTech TTP Summer Bootcamp
 
+[![Content: CC BY-NC-SA 4.0](https://img.shields.io/badge/Content-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE) [![Tooling: MIT](https://img.shields.io/badge/Tooling-MIT-green.svg)](LICENSE)
+
 Documentation, slides, and supporting files for the CityTech TTP 12-week summer
 coding bootcamp.
 
