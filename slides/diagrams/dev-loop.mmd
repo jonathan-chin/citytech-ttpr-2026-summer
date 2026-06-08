@@ -1,0 +1,7 @@
+flowchart LR
+  B["Boilerplate"] --> R["React app"]
+  R --> H["Hot-reload build"]
+  H --> E["Edit"]
+  E --> C["Check"]
+  C -->|keep iterating| H
+  C -->|done| P["Publish"]
