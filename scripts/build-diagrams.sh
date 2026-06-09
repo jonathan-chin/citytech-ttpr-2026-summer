@@ -1,10 +1,45 @@
 #!/usr/bin/env bash
-# Render every Mermaid source (slides/diagrams/*.mmd) to a sibling SVG.
-# Invoked by `yarn build:diagrams` (and indirectly by `yarn build:slides`).
+# Render Mermaid sources (slides/diagrams/*.mmd) to sibling SVGs.
+#
+# Usage:
+#   bash scripts/build-diagrams.sh              # render every diagram
+#   bash scripts/build-diagrams.sh 2026-06-08   # render only the diagrams
+#                                               # referenced by that day's deck
 set -euo pipefail
-
 shopt -s nullglob
-for f in slides/diagrams/*.mmd; do
-  echo "mermaid: $f -> ${f%.mmd}.svg"
-  mmdc --input "$f" --output "${f%.mmd}.svg" --backgroundColor transparent
-done
+
+render_one() {
+  local src="$1"
+  echo "mermaid: $src -> ${src%.mmd}.svg"
+  mmdc --input "$src" --output "${src%.mmd}.svg" --backgroundColor transparent
+}
+
+if [ $# -ge 1 ]; then
+  # Render only the diagrams referenced by a specific day's deck.
+  day="${1##*/}"        # strip any leading path
+  day="${day%.md}"      # strip a trailing .md
+  deck="slides/${day}.md"
+  if [ ! -f "$deck" ]; then
+    echo "No such deck: $deck" >&2
+    exit 1
+  fi
+  names=$(grep -oE 'diagrams/[A-Za-z0-9_-]+\.svg' "$deck" \
+            | sed -E 's#diagrams/##; s#\.svg$##' | sort -u || true)
+  if [ -z "$names" ]; then
+    echo "No diagrams referenced in $deck — nothing to render."
+    exit 0
+  fi
+  for n in $names; do
+    src="slides/diagrams/${n}.mmd"
+    if [ -f "$src" ]; then
+      render_one "$src"
+    else
+      echo "WARN: $deck references $n, but $src is missing" >&2
+    fi
+  done
+else
+  # No argument: render every diagram.
+  for src in slides/diagrams/*.mmd; do
+    render_one "$src"
+  done
+fi

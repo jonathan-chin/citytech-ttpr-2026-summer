@@ -51,7 +51,7 @@ yarn build:day 2026-06-02    # build just one day's deck → slides/2026-06-02.p
 
 Other helpers:
 
-- `yarn build:diagrams` — render `slides/diagrams/*.mmd` → `*.svg` only
+- `yarn build:diagrams [YYYY-MM-DD]` — render all diagrams, or only the ones a given day's deck references
 - `yarn watch:slides` — rebuild PDFs on save
 - `yarn preview:slides` — live preview server in the browser
 

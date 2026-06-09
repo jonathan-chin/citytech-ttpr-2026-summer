@@ -19,5 +19,5 @@ if [ ! -f "$file" ]; then
   exit 1
 fi
 
-bash ./scripts/build-diagrams.sh
+bash ./scripts/build-diagrams.sh "$day"
 marp --config-file ./marp.config.js --pdf --allow-local-files "$file"
