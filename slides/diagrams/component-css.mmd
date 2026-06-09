@@ -1,0 +1,11 @@
+flowchart TD
+  A["App — imports styles.css"] --> H["Header"]
+  A --> CR["ChatRoom"]
+  CR --> ML
+  subgraph S["MessageList's scoped CSS"]
+    ML["MessageList — imports message-list.css"]
+    ML --> M1["Message"]
+    ML --> M2["Message"]
+  end
+  classDef styled fill:#fff2cc,stroke:#b58900,color:#000
+  class A,H,CR,ML,M1,M2 styled
