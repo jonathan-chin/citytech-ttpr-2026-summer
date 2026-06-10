@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="430" viewBox="0 0 720 430" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect width="720" height="430" fill="#ffffff"/>
+  <rect x="8" y="8" width="704" height="414" rx="8" fill="#ffffff" stroke="#cccccc"/>
+
+  <!-- Left third: form -->
+  <rect x="20" y="20" width="196" height="390" rx="6" fill="#f7f7f9" stroke="#e0e0e0"/>
+  <text x="34" y="44" font-size="13" font-weight="bold" fill="#2e75b6">Add a course</text>
+
+  <text x="34" y="70" font-size="10" fill="#888">Course name</text>
+  <rect x="34" y="76" width="168" height="26" rx="4" fill="#fff" stroke="#bbb"/>
+  <text x="42" y="93" font-size="11" fill="#bbb">e.g. Intro to CS</text>
+
+  <text x="34" y="122" font-size="10" fill="#888">Day</text>
+  <rect x="34" y="128" width="168" height="26" rx="4" fill="#fff" stroke="#bbb"/>
+  <text x="42" y="145" font-size="11" fill="#666">Tuesday</text>
+  <path d="M188 137 l8 0 l-4 6 z" fill="#999"/>
+
+  <text x="34" y="174" font-size="10" fill="#888">Start</text>
+  <rect x="34" y="180" width="78" height="26" rx="4" fill="#fff" stroke="#bbb"/>
+  <text x="42" y="197" font-size="11" fill="#666">2:00pm</text>
+
+  <text x="124" y="174" font-size="10" fill="#888">End</text>
+  <rect x="124" y="180" width="78" height="26" rx="4" fill="#fff" stroke="#bbb"/>
+  <text x="132" y="197" font-size="11" fill="#666">3:00pm</text>
+
+  <rect x="34" y="222" width="168" height="28" rx="4" fill="#2e75b6"/>
+  <text x="118" y="240" font-size="12" fill="#fff" text-anchor="middle">+ Add course</text>
+
+  <!-- Right two-thirds: weekly grid -->
+  <g font-size="10" fill="#555" text-anchor="middle">
+    <text x="310" y="40">Sun</text>
+    <text x="370" y="40">Mon</text>
+    <text x="430" y="40">Tue</text>
+    <text x="490" y="40">Wed</text>
+    <text x="550" y="40">Thu</text>
+    <text x="610" y="40">Fri</text>
+    <text x="670" y="40">Sat</text>
+  </g>
+
+  <g stroke="#e6e6e6">
+    <line x1="280" y1="50" x2="280" y2="404"/>
+    <line x1="340" y1="50" x2="340" y2="404"/>
+    <line x1="400" y1="50" x2="400" y2="404"/>
+    <line x1="460" y1="50" x2="460" y2="404"/>
+    <line x1="520" y1="50" x2="520" y2="404"/>
+    <line x1="580" y1="50" x2="580" y2="404"/>
+    <line x1="640" y1="50" x2="640" y2="404"/>
+    <line x1="700" y1="50" x2="700" y2="404"/>
+  </g>
+
+  <g stroke="#efefef">
+    <line x1="280" y1="90"  x2="700" y2="90"/>
+    <line x1="280" y1="123" x2="700" y2="123"/>
+    <line x1="280" y1="156" x2="700" y2="156"/>
+    <line x1="280" y1="189" x2="700" y2="189"/>
+    <line x1="280" y1="222" x2="700" y2="222"/>
+    <line x1="280" y1="255" x2="700" y2="255"/>
+    <line x1="280" y1="288" x2="700" y2="288"/>
+    <line x1="280" y1="321" x2="700" y2="321"/>
+    <line x1="280" y1="354" x2="700" y2="354"/>
+    <line x1="280" y1="387" x2="700" y2="387"/>
+  </g>
+  <g font-size="8" fill="#aaa" text-anchor="end">
+    <text x="276" y="93">8a</text>
+    <text x="276" y="159">10a</text>
+    <text x="276" y="225">12p</text>
+    <text x="276" y="291">2p</text>
+    <text x="276" y="357">4p</text>
+  </g>
+
+  <!-- Calculus I: Mon 10:00-11:30 -->
+  <rect x="342" y="156" width="56" height="49" rx="4" fill="#d6ead6" stroke="#3a9a3a"/>
+  <text x="347" y="170" font-size="8" font-weight="bold" fill="#1a5a1a">Calc I</text>
+  <text x="347" y="181" font-size="7" fill="#3a7a3a">10–11:30a</text>
+
+  <!-- Intro to CS: Tue 2:00-3:00 -->
+  <rect x="402" y="288" width="56" height="33" rx="4" fill="#d3e4f6" stroke="#2e75b6"/>
+  <text x="407" y="302" font-size="8" font-weight="bold" fill="#194a7a">Intro CS</text>
+  <text x="407" y="313" font-size="7" fill="#2e75b6">2–3p</text>
+
+  <!-- English Composition: Wed 1:00-2:15 -->
+  <rect x="462" y="255" width="56" height="41" rx="4" fill="#f7e4cb" stroke="#d08a3a"/>
+  <text x="467" y="269" font-size="8" font-weight="bold" fill="#8a5a1a">English</text>
+  <text x="467" y="280" font-size="7" fill="#b07a2a">1–2:15p</text>
+</svg>

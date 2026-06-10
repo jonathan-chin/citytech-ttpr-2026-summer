@@ -1,0 +1,20 @@
+/* Styling for project spec PDFs (project_specs/*.md). */
+body {
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  max-width: 7in;
+  margin: 0 auto;
+  line-height: 1.55;
+  color: #1a1a1a;
+}
+h1 { border-bottom: 3px solid #2e75b6; padding-bottom: 0.2em; }
+h2 { color: #2e75b6; margin-top: 1.5em; }
+code {
+  background: #f3f3f3;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+a { color: #2e75b6; word-break: break-word; }
+ul { margin-top: 0.3em; }
+img { max-width: 100%; height: auto; display: block; margin: 0.6em 0; }
+@page { margin: 0.7in; }

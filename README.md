@@ -15,8 +15,10 @@ coding bootcamp.
 │   └── diagrams/               # Mermaid diagrams used in the slides
 │       ├── *.mmd                  # Mermaid source
 │       └── *.svg                  # Generated SVG (built from the .mmd)
-├── scripts/
-│   └── build-diagrams.sh       # Renders slides/diagrams/*.mmd → *.svg
+├── project_specs/          # Project / assignment sheets
+│   ├── name.md                 # Markdown source
+│   └── name.pdf                # Generated PDF (built from the .md)
+├── scripts/                # Build scripts
 ├── course_outline.pdf      # The 12-week curriculum outline
 ├── marp.config.js          # Marp CLI configuration
 └── package.json
@@ -57,6 +59,20 @@ Other helpers:
 
 `build:day` accepts the date with or without the extension
 (`2026-06-02` or `2026-06-02.md`).
+
+## Project specs
+
+Project / assignment sheets live in `project_specs/` as Markdown
+(`snake_case.md`), and render on GitHub as-is. Each has a matching PDF handout
+built from the source — **don't edit the PDF by hand.**
+
+```bash
+yarn build:specs                          # build every project_specs/*.md → *.pdf
+yarn build:specs college_schedule_builder # build just one
+```
+
+Files named with a leading underscore (e.g. `_template.md`) are skipped.
+PDFs render via pandoc → headless Chrome (the Puppeteer Chromium).
 
 > Both the PDF export and Mermaid rendering use a headless Chromium under the
 > hood (via Marp CLI / mermaid-cli + Puppeteer), downloaded automatically on
