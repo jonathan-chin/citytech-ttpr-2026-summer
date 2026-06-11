@@ -58,7 +58,8 @@ Other helpers:
 - `yarn preview:slides` — live preview server in the browser
 
 `build:day` accepts the date with or without the extension
-(`2026-06-02` or `2026-06-02.md`).
+(`2026-06-02` or `2026-06-02.md`). With **no argument**, it builds the
+**latest** dated deck.
 
 ## Project specs
 
