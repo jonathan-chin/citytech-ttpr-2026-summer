@@ -7,7 +7,8 @@
     "build:diagrams": "bash ./scripts/build-diagrams.sh",
     "build:day": "bash ./scripts/build-day.sh",
     "build:slides": "yarn build:diagrams && marp --config-file ./marp.config.js --input-dir ./slides --pdf --allow-local-files",
-    "build:specs": "bash ./scripts/build-specs.sh",
+    "build:project_spec": "bash ./scripts/build-specs.sh",
+    "build:project_specs": "bash ./scripts/build-specs.sh",
     "watch:slides": "marp --config-file ./marp.config.js --input-dir ./slides --pdf --allow-local-files --watch",
     "preview:slides": "marp --config-file ./marp.config.js --input-dir ./slides --server"
   },

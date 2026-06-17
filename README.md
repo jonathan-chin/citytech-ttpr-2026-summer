@@ -68,8 +68,8 @@ Project / assignment sheets live in `project_specs/` as Markdown
 built from the source — **don't edit the PDF by hand.**
 
 ```bash
-yarn build:specs                          # build every project_specs/*.md → *.pdf
-yarn build:specs college_schedule_builder # build just one
+yarn build:project_specs                          # build every project_specs/*.md → *.pdf
+yarn build:project_spec college_schedule_builder  # build just one
 ```
 
 Files named with a leading underscore (e.g. `_template.md`) are skipped.
