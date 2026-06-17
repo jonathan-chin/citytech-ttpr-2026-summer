@@ -103,6 +103,23 @@ GET /hint/a1b2c3d4/99
 400  { "error": "Hint 99 does not exist (max 5)" }
 ```
 
+## Using a Different API
+
+The game does not have to be Pokémon themed. **PokéAPI is just a free, robust default** with lots of data per item, which makes writing good hints easy.
+
+If you would rather theme it differently, swap in another **free external API** (no key, rich data) and keep the same shape: `/new` picks a random item, ordered `/hint` routes reveal its fields, and `/guess` checks the answer.
+
+Whatever you pick, the **Express server, routes, and game flow** are what matter, not the subject.
+
+## Pair Programming
+
+This is a **paired** project: work with a partner, together in real time.
+
+- **Driver:** types the code. **Navigator:** reviews, thinks ahead, and spots issues.
+- **Switch roles often** so you both drive and both navigate.
+- You share **one repo and one codebase**; both partners should understand every part.
+- Commit as a pair, and **credit both partners** in your README.
+
 ## Requirements and Allowances
 
 - Your code must be tracked in a **GitHub repo from the start**, with **regular commits and pushes** throughout the project's life cycle.
