@@ -12,12 +12,14 @@ coding bootcamp.
 ├── slides/                 # Lecture decks — one file per session
 │   ├── YYYY-MM-DD.md           # Marp-format Markdown source
 │   ├── YYYY-MM-DD.pdf          # Generated PDF (built from the .md)
-│   └── diagrams/               # Mermaid diagrams used in the slides
-│       ├── *.mmd                  # Mermaid source
-│       └── *.svg                  # Generated SVG (built from the .mmd)
+│   ├── diagrams/               # Mermaid diagrams used in the slides
+│   │   ├── *.mmd                  # Mermaid source
+│   │   └── *.svg                  # Generated SVG (built from the .mmd)
+│   └── assets/                 # Images embedded in slides (e.g. comics)
 ├── project_specs/          # Project / assignment sheets
 │   ├── name.md                 # Markdown source
 │   └── name.pdf                # Generated PDF (built from the .md)
+├── data/                   # Sample databases for code-alongs (e.g. *.sqlite)
 ├── scripts/                # Build scripts
 ├── course_outline.pdf      # The 12-week curriculum outline
 ├── marp.config.js          # Marp CLI configuration
