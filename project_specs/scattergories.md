@@ -20,12 +20,13 @@ Based on the party game **Scattergories**: each game has a **letter** and a **to
 
 Build an **Express API** (Prisma + PostgreSQL) with at least these routes:
 
-- **New game**: create a game and return a **room code**, a random **letter**, and a **topic**
+- **New game**: `POST /games` with a `roomCode`; the server randomly picks a **letter** and a **topic**, creates the game, and returns them
 - **List games**: show all games with their **room code**, **letter**, and **topic**
 - **Submit answer**: a player sends `{ roomCode, username, answer }`
 
 ### Rules the server enforces
 
+- The **room code** must be **unique**: if a game with that `roomCode` already exists, reject it (e.g. `409`)
 - The answer must **start with the game's letter**, or respond with an error (e.g. `400`)
 - The answer must be **new for that room**: if it was already submitted, reject it (e.g. `409`)
 - **No auth** (just to keep things simple): the **username** is only a label, and we rely on players to use their own name honestly
@@ -34,6 +35,7 @@ Build an **Express API** (Prisma + PostgreSQL) with at least these routes:
 
 - A **game** has many **answers** (`Game` 1:N `Answer`)
 - Enforce "no duplicate answer in a room" with a **`UNIQUE`** constraint on `(game_id, answer)`, then have Express catch that error and reject the submission
+- Make `room_code` **`UNIQUE`** too, so two games can't share a code
 
 ## Exposing Your Server
 
@@ -50,8 +52,11 @@ Share that URL; players send their answers there. Expose the **API**, never your
 ## Example Exchanges
 
 ```text
-POST /games
+POST /games   { "roomCode": "PLUM42" }
 { "roomCode": "PLUM42", "letter": "B", "topic": "Animals" }
+
+POST /games   { "roomCode": "PLUM42" }
+409  { "error": "Room code already in use" }
 
 GET /games
 [
