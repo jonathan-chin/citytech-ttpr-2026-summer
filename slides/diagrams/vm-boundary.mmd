@@ -1,0 +1,20 @@
+flowchart LR
+  subgraph WIN["Windows host"]
+    MNTC["/mnt/c/Users/you/myapp<br/>on the Windows drive"]
+  end
+  subgraph WSL["WSL2 (Linux VM)"]
+    TOOLS["Your dev tools<br/>(npm, git, vite)"]
+    PROJ["~/projects/myapp<br/>Linux ext4: native and fast"]
+  end
+  TOOLS -->|"fast (native)"| PROJ
+  TOOLS -->|"slow: crosses the VM boundary"| MNTC
+  class MNTC win
+  class PROJ proj
+  class TOOLS tools
+  classDef win fill:#ffe3e3,stroke:#e03131,color:#c92a2a
+  classDef proj fill:#d3f9d8,stroke:#2f9e44,color:#2b8a3e
+  classDef tools fill:#ffffff,stroke:#495057,color:#343a40
+  style WIN fill:#f1f3f5,stroke:#868e96,color:#495057
+  style WSL fill:#e7f5ff,stroke:#1971c2,color:#1971c2
+  linkStyle 0 stroke:#2f9e44,stroke-width:2px
+  linkStyle 1 stroke:#e03131,stroke-width:2px

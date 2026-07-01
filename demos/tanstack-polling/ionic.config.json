@@ -1,0 +1,7 @@
+{
+  "name": "tanstack-polling",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

@@ -1,0 +1,7 @@
+sequenceDiagram
+    participant C as Client
+    participant S as Server
+    loop every few seconds
+        C->>S: any updates?
+        S-->>C: response (data or "nothing new")
+    end

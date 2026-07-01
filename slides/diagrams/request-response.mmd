@@ -1,0 +1,8 @@
+sequenceDiagram
+    actor U as User
+    participant C as Client
+    participant S as Server
+    U->>C: interacts (click, submit)
+    C->>S: request
+    S-->>C: response with data
+    Note over U,S: data is fetched only when the user acts

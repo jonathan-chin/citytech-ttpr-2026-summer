@@ -1,0 +1,9 @@
+sequenceDiagram
+    participant C as Client
+    participant S as Server
+    C->>S: open connection (handshake)
+    S-->>C: connection established
+    Note over C,S: connection stays open both ways
+    C->>S: message
+    S->>C: message (pushed anytime)
+    S->>C: message (pushed anytime)
