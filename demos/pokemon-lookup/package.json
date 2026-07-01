@@ -52,5 +52,9 @@
     "vite": "^5.0.0",
     "vitest": "^0.34.6"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "resolutions": {
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4"
+  }
 }
