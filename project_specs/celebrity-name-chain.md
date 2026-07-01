@@ -30,6 +30,7 @@ Build a **full-stack** app in two parts:
 ### API routes (at least)
 
 - **New game**: `POST /games` with `{ roomCode, celebrity }`. The `celebrity` is a single string used as the **starting name** and is **always accepted**. Creates the game and returns it.
+- **List games**: `GET /games`. Returns every game with just its **room code** and **most recent** celebrity name (no player counts or presence).
 - **Get game**: `GET /games/:roomCode`. Returns the **most recent** celebrity name (nothing else is required).
 - **Submit answer**: `POST /answers` with `{ roomCode, username, answer }`, where `answer` is a **single string**. The **server** splits it on spaces to determine the first and last name.
 
@@ -72,6 +73,12 @@ POST /games   { "roomCode": "STAR01", "celebrity": "Albert Einstein" }
 
 POST /games   { "roomCode": "STAR01", "celebrity": "Marie Curie" }
 409  { "error": "Room code already in use" }
+
+GET /games
+[
+  { "roomCode": "STAR01", "mostRecent": "Albert Einstein" },
+  { "roomCode": "KIWI88", "mostRecent": "Serena Williams" }
+]
 
 GET /games/STAR01
 { "roomCode": "STAR01", "mostRecent": "Albert Einstein" }
