@@ -20,8 +20,10 @@ coding bootcamp.
 │   ├── name.md                 # Markdown source
 │   └── name.pdf                # Generated PDF (built from the .md)
 ├── data/                   # Sample databases for code-alongs (e.g. *.sqlite)
+├── demos/                  # Runnable in-class demo apps (not for students to fork)
 ├── scripts/                # Build scripts
 ├── course_outline.pdf      # The 12-week curriculum outline
+├── lessons_learned.md      # Ideas for refining the program next time
 ├── marp.config.js          # Marp CLI configuration
 └── package.json
 ```
@@ -86,6 +88,12 @@ PDFs render via pandoc → headless Chrome (the Puppeteer Chromium).
 [`course_outline.pdf`](course_outline.pdf) is the 12-week
 curriculum: full-stack web development, AI-assisted coding, secure development,
 data science, networking & security, and a student-driven capstone.
+
+## Lessons learned
+
+[`lessons_learned.md`](lessons_learned.md) collects ideas for refining the
+program in future runs — things worth doing differently next time, written up as
+they come up during the course.
 
 ## License
 
