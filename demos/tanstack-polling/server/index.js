@@ -1,8 +1,6 @@
 import express from "express";
-import cors from "cors";
 
 const app = express();
-app.use(cors()); // allow the client (a different origin) to call this API
 app.use(express.json());
 
 // In-memory list of messages. Resets whenever the server restarts.
