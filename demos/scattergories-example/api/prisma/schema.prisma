@@ -1,0 +1,57 @@
+// Prisma schema for the Scattergories game.
+//
+// Two tables with a one-to-many relationship:
+//   Game  1 ----< N  Answer
+//
+// The database enforces two rules for us with UNIQUE constraints, and the
+// Express code catches the resulting errors (Prisma code "P2002"):
+//   - room_code is UNIQUE          -> two games can't share a room code
+//   - (game_id, answer) is UNIQUE  -> no duplicate answer inside one room
+
+// Prisma 7 uses the new "prisma-client" generator. It writes a TypeScript
+// client into our own source tree (output below), so we import it from there
+// instead of from "@prisma/client".
+generator client {
+  provider            = "prisma-client"
+  output              = "../src/generated/prisma"
+  moduleFormat        = "esm"
+  runtime             = "nodejs"
+  // Emit ".js" extensions on the client's own relative imports so the
+  // compiled output resolves under Node's ESM loader (node dist/...).
+  importFileExtension = "js"
+}
+
+// Prisma 7 no longer takes the connection `url` here. It lives in
+// prisma.config.ts (for Migrate) and in the driver adapter we pass to
+// PrismaClient at runtime (see src/db.js).
+datasource db {
+  provider = "postgresql"
+}
+
+model Game {
+  id        Int      @id @default(autoincrement())
+  roomCode  String   @unique @map("room_code")
+  letter    String
+  topic     String
+  createdAt DateTime @default(now()) @map("created_at")
+
+  // One game has many answers.
+  answers Answer[]
+
+  @@map("games")
+}
+
+model Answer {
+  id        Int      @id @default(autoincrement())
+  gameId    Int      @map("game_id")
+  username  String
+  answer    String
+  createdAt DateTime @default(now()) @map("created_at")
+
+  // The Answer side of the Game 1:N Answer relationship.
+  game Game @relation(fields: [gameId], references: [id], onDelete: Cascade)
+
+  // "No duplicate answer in a room" lives in the database, not just in code.
+  @@unique([gameId, answer], name: "game_answer_unique")
+  @@map("answers")
+}

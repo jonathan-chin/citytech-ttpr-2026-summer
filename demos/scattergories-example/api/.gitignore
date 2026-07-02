@@ -1,0 +1,17 @@
+node_modules/
+.env
+
+# Compiled output (run `yarn build` to recreate it)
+dist/
+
+# Generated Prisma 7 client (run `yarn generate` to recreate it)
+src/generated/
+
+# Yarn (node-modules linker): keep config and the pinned release, ignore caches
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.pnp.*

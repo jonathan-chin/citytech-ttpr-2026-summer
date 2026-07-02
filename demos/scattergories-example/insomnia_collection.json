@@ -1,0 +1,151 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-06-24T00:00:00.000Z",
+  "__export_source": "scattergories-group-project",
+  "resources": [
+    {
+      "_id": "wrk_scattergories",
+      "_type": "workspace",
+      "parentId": null,
+      "name": "Scattergories API",
+      "description": "Requests for the Scattergories Express + Prisma API. Set base_url in the environment (localhost or your ngrok URL).",
+      "scope": "collection"
+    },
+    {
+      "_id": "env_base",
+      "_type": "environment",
+      "parentId": "wrk_scattergories",
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:3000",
+        "roomCode": "PLUM42"
+      },
+      "dataPropertyOrder": {
+        "&": ["base_url", "roomCode"]
+      },
+      "metaSortKey": 1
+    },
+    {
+      "_id": "fld_games",
+      "_type": "request_group",
+      "parentId": "wrk_scattergories",
+      "name": "Games",
+      "metaSortKey": -100
+    },
+    {
+      "_id": "fld_answers",
+      "_type": "request_group",
+      "parentId": "wrk_scattergories",
+      "name": "Answers",
+      "metaSortKey": -50
+    },
+    {
+      "_id": "req_health",
+      "_type": "request",
+      "parentId": "wrk_scattergories",
+      "name": "Health check",
+      "method": "GET",
+      "url": "{{ _.base_url }}/",
+      "body": {},
+      "headers": [],
+      "metaSortKey": -200
+    },
+    {
+      "_id": "req_create_game",
+      "_type": "request",
+      "parentId": "fld_games",
+      "name": "Create game (PLUM42)",
+      "method": "POST",
+      "url": "{{ _.base_url }}/games",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"roomCode\": \"{{ _.roomCode }}\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "description": "Server picks the letter and topic. Returns 201 with { roomCode, letter, topic }.",
+      "metaSortKey": -100
+    },
+    {
+      "_id": "req_create_game_dup",
+      "_type": "request",
+      "parentId": "fld_games",
+      "name": "Create game again -> 409",
+      "method": "POST",
+      "url": "{{ _.base_url }}/games",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"roomCode\": \"{{ _.roomCode }}\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "description": "Same room code as above. room_code is UNIQUE, so this is rejected: 409 Room code already in use.",
+      "metaSortKey": -90
+    },
+    {
+      "_id": "req_list_games",
+      "_type": "request",
+      "parentId": "fld_games",
+      "name": "List games",
+      "method": "GET",
+      "url": "{{ _.base_url }}/games",
+      "body": {},
+      "headers": [],
+      "metaSortKey": -80
+    },
+    {
+      "_id": "req_answer_ok",
+      "_type": "request",
+      "parentId": "fld_answers",
+      "name": "Submit answer (Bear)",
+      "method": "POST",
+      "url": "{{ _.base_url }}/answers",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"roomCode\": \"{{ _.roomCode }}\",\n  \"username\": \"sam\",\n  \"answer\": \"Bear\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "description": "Accepted only if the game's letter is B. The server picks the letter at random, so edit the answer to match the letter you got back from Create game.",
+      "metaSortKey": -100
+    },
+    {
+      "_id": "req_answer_dup",
+      "_type": "request",
+      "parentId": "fld_answers",
+      "name": "Submit same answer -> 409",
+      "method": "POST",
+      "url": "{{ _.base_url }}/answers",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"roomCode\": \"{{ _.roomCode }}\",\n  \"username\": \"kai\",\n  \"answer\": \"Bear\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "description": "(game_id, answer) is UNIQUE, so claiming Bear a second time is rejected: 409 Answer already taken.",
+      "metaSortKey": -90
+    },
+    {
+      "_id": "req_answer_wrong_letter",
+      "_type": "request",
+      "parentId": "fld_answers",
+      "name": "Wrong letter -> 400",
+      "method": "POST",
+      "url": "{{ _.base_url }}/answers",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"roomCode\": \"{{ _.roomCode }}\",\n  \"username\": \"kai\",\n  \"answer\": \"Cat\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "description": "If the game's letter is B, Cat does not start with it: 400 Answer must start with B.",
+      "metaSortKey": -80
+    }
+  ]
+}

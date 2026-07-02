@@ -1,0 +1,8 @@
+{
+  "name": "scattergories",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Example Scattergories group project: an Express + Prisma + PostgreSQL game API. The runnable app lives in api/.",
+  "license": "MIT",
+  "packageManager": "yarn@4.6.0"
+}
