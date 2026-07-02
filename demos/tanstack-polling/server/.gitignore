@@ -1,0 +1,5 @@
+# dependencies
+/node_modules
+
+# yarn install state (local cache)
+.yarn/install-state.gz

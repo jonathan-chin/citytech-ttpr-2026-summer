@@ -32,3 +32,9 @@ yarn-error.log*
 
 # yarn install state (local cache)
 .yarn/install-state.gz
+
+# environment
+.env
+
+# yarn install state (local cache)
+.yarn/install-state.gz

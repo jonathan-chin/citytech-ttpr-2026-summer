@@ -1,0 +1,15 @@
+{
+  "name": "tanstack-polling-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "yarn@4.17.0",
+  "description": "Tiny Express server for the TanStack Query polling demo",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}
