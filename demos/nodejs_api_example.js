@@ -1,3 +1,10 @@
+// Node.js API example -- in-class code-along.
+//
+// A quick demo of calling a JSON HTTP API from Node using the built-in `fetch`:
+// shuffle a new deck from the Deck of Cards API, then draw a couple of cards.
+// We wrote this together in class and left it unfinished -- students complete
+// it via the two challenges at the bottom.
+
 const res = await fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1');
 const data = await res.json();
 const deck_id = data.deck_id;
