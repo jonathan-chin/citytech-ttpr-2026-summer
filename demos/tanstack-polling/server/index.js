@@ -1,6 +1,8 @@
 import express from "express";
+import cors from "cors";
 
 const app = express();
+app.use(cors()); // allow the browser client (a different origin) to read responses
 app.use(express.json());
 
 // In-memory list of messages. Resets whenever the server restarts.
