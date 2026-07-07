@@ -1,0 +1,26 @@
+<svg viewBox="0 0 760 400" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#343a40"/>
+    </marker>
+  </defs>
+
+  <text x="195" y="86" font-size="16" text-anchor="middle" fill="#343a40">pip install pandas</text>
+  <line x1="195" y1="96" x2="195" y2="118" stroke="#343a40" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <text x="565" y="86" font-size="16" text-anchor="middle" fill="#343a40">notebook: import pandas</text>
+  <line x1="565" y1="96" x2="565" y2="118" stroke="#343a40" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <rect x="40" y="120" width="310" height="240" rx="12" fill="#f1f3f5" stroke="#868e96" stroke-width="2.5"/>
+  <text x="195" y="152" font-size="20" text-anchor="middle" fill="#495057">Terminal's Python</text>
+  <text x="195" y="176" font-size="13" text-anchor="middle" fill="#868e96">where pip install ran</text>
+  <rect x="95" y="232" width="200" height="60" rx="10" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+  <text x="195" y="270" font-size="20" text-anchor="middle" fill="#2b8a3e">pandas &#10003;</text>
+
+  <rect x="410" y="120" width="310" height="240" rx="12" fill="#e7f5ff" stroke="#1971c2" stroke-width="2.5"/>
+  <text x="565" y="152" font-size="20" text-anchor="middle" fill="#1971c2">Kernel's Python</text>
+  <text x="565" y="176" font-size="13" text-anchor="middle" fill="#4c6ef5">runs the notebook</text>
+  <rect x="465" y="232" width="200" height="60" rx="10" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+  <text x="565" y="270" font-size="20" text-anchor="middle" fill="#c92a2a">pandas &#10007;</text>
+  <text x="565" y="330" font-size="15" text-anchor="middle" fill="#c92a2a">ModuleNotFoundError</text>
+</svg>
