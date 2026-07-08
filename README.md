@@ -83,6 +83,38 @@ PDFs render via pandoc → headless Chrome (the Puppeteer Chromium).
 > hood (via Marp CLI / mermaid-cli + Puppeteer), downloaded automatically on
 > `yarn install`.
 
+## Demos
+
+Runnable in-class demo apps live in `demos/`. They are reference material, not
+starter code for students to fork.
+
+### Live coding demos (code-alongs)
+
+Several demos are **code-alongs**: in class I start from a **blank or lightly
+scaffolded** project and we build it up **live, together** with the students. The
+version committed here is the **finished** (or scaffolded starting) result,
+pushed so students can **review** it afterward.
+
+If you are an **educator** using this repo as a model or reference, treat these
+as **build-from-scratch** exercises: start with an empty (or freshly scaffolded)
+project and code along with your own students, rather than handing over the
+finished files provided here.
+
+The code-along demos, and the sessions they appear in:
+
+- **`demos/ionic-chat-app`**: Ionic + React + React Hook Form chat app, committed
+  as the blank Ionic starter and built up live (`2026-07-01`)
+- **`demos/react-chat-app`**: plain-React "fake chatroom," the vanilla
+  DOM-handling version built together (`2026-06-08`)
+- **`demos/tanstack-polling`**: TanStack Query polling client plus a tiny Express
+  server (`2026-07-01`, `2026-07-02`)
+- **`demos/eda-squirrel/squirrel_eda.ipynb`**: squirrel-census EDA notebook
+  explored and extended live (`2026-07-06`, `2026-07-07`)
+
+The other items in `demos/` are **reference examples** or **practice datasets**
+(for example `eda-murals/` and `eda-fridge/` provide messy data for students to
+wrangle in their own notebooks), not live builds.
+
 ## Course outline
 
 [`course_outline.pdf`](course_outline.pdf) is the 12-week
