@@ -33,10 +33,17 @@ if [ $# -ge 1 ]; then
     src="slides/diagrams/${n}.mmd"
     if [ -f "$src" ]; then
       render_one "$src"
+    elif [ -f "slides/diagrams/${n}.svg" ]; then
+      : # SVG authored directly (matplotlib/seaborn output, or hand-written).
+        # There is no Mermaid source to render from, and none is expected.
     else
-      echo "WARN: $deck references $n, but $src is missing" >&2
+      echo "ERROR: $deck references $n, but neither slides/diagrams/${n}.mmd nor slides/diagrams/${n}.svg exists" >&2
+      missing=1
     fi
   done
+  if [ "${missing:-0}" -eq 1 ]; then
+    exit 1
+  fi
 else
   # No argument: render every diagram.
   for src in slides/diagrams/*.mmd; do
