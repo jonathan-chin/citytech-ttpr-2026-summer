@@ -23,6 +23,7 @@ Pick a question about life in NYC, then use data to explore it and make a recomm
 - **At least one** must come from **[NYC Open Data](https://opendata.cityofnewyork.us/)**.
 - The datasets must actually **work together**: merged on a shared key, compared, or one giving **context** for the other (for example, population to turn counts into rates).
 - Track your work in a **GitHub repo** with **commits from both members**.
+- **Keep large data files out of git.** Add them to `.gitignore`, and instead put clear instructions for **obtaining each dataset** (a link plus any steps) in the **first cell** of your notebook, so a reader can reproduce your work.
 - You may use **AI** at any stage, but **disclose** how and where you used it.
 
 ## Deliverables
