@@ -1,0 +1,7 @@
+{
+  "name": "recharts-squirrels",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
