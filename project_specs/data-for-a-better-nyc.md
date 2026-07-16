@@ -1,6 +1,6 @@
 # Group Project: Data for a Better NYC
 
-**Assigned:** 2026-07-15  ·  **Due:** 2026-07-21 (Tuesday, in-class presentations)  ·  **Team size:** 2
+**Assigned:** 2026-07-15  ·  **Due:** 2026-07-21 (in-class presentations)  ·  **Team size:** 2
 
 ## Purpose
 
