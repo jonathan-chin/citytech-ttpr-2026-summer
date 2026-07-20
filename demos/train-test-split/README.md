@@ -10,10 +10,9 @@ It picks up where `../linear-regression-intro/` left off, using the same NYC ren
 - The tempting mistake: `model.score(X, y)`, graded on the rows it trained on
 - `train_test_split`: fit on **train**, score on **test**, and what `test_size` and
   `random_state` do
-- Adding **junk** features and watching the training score rise while the test score falls
-- Pushing it until features equal training rows: train R-squared **1.000**, test **-18.4**
-- What a **negative R-squared** means (worse than always guessing the average)
-- The rule of thumb: think in **rows per feature**
+- A plot of **which rows the model learned from** and which it was graded on
+- Widening to more features, still fitting on train and reporting test
+- Reading the **gap** between the two scores
 
 ## Data
 
