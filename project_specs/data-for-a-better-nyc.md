@@ -58,7 +58,7 @@ Pick a question about life in NYC, then use data to explore it and make a recomm
 - **Effective, honest visualizations** that fit the question.
 - A **defensible recommendation**, and awareness of what the data does **not** show.
 
-## Tiered Learning Goals (stretch)
+## Tiered Learning Goals
 
 Static **seaborn** charts are the required baseline. These are extra, on top of that:
 
