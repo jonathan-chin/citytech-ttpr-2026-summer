@@ -17,4 +17,12 @@ code {
 a { color: #2e75b6; word-break: break-word; }
 ul { margin-top: 0.3em; }
 img { max-width: 100%; height: auto; display: block; margin: 0.6em 0; }
+table { border-collapse: collapse; width: 100%; margin: 0.8em 0; }
+th, td {
+  vertical-align: top;
+  text-align: left;
+  padding: 0.4em 0.7em;
+  border-bottom: 1px solid #d0d0d0;
+}
+th { border-bottom: 2px solid #2e75b6; }
 @page { margin: 0.7in; }
