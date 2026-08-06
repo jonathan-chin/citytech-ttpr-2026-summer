@@ -1,0 +1,16 @@
+.demo-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.demo-columns > :last-child {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+  .demo-columns {
+    grid-template-columns: 1fr;
+  }
+}
