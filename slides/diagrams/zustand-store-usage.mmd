@@ -1,0 +1,15 @@
+flowchart LR
+  subgraph Tree["Component tree"]
+    direction TB
+    App --> Layout
+    Layout --> Sidebar
+    Layout --> ProductPage
+    Sidebar --> CartSummary["CartSummary - reads cartItems"]
+    ProductPage --> AddButton["AddButton - calls addItem"]
+  end
+  Store[["useCartStore - created once, near the app root"]]
+  App -.->|"initializes"| Store
+  CartSummary -.->|"direct import"| Store
+  AddButton -.->|"direct import"| Store
+  classDef store fill:#d4edda,stroke:#2e7d32,color:#000
+  class Store store

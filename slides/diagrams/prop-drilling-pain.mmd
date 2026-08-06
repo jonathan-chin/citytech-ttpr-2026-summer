@@ -1,0 +1,6 @@
+flowchart TD
+  App["App - state: cartItems"] --> Layout["Layout"]
+  Layout --> Sidebar["Sidebar"]
+  Sidebar --> CartSummary["CartSummary - uses cartItems"]
+  classDef passthrough fill:#f8d7da,stroke:#c0392b,color:#000
+  class Layout,Sidebar passthrough

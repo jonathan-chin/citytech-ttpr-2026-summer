@@ -1,0 +1,8 @@
+flowchart TD
+  CP["CartProvider - value: cartItems"] --> App
+  App --> Layout
+  Layout --> Sidebar
+  Sidebar --> CartSummary["CartSummary - useContext(CartContext)"]
+  CartSummary -.->|"context value read directly"| CP
+  classDef provider fill:#d4edda,stroke:#2e7d32,color:#000
+  class CP provider

@@ -1,0 +1,7 @@
+flowchart TD
+  P["ShoppingApp"]
+  P --> A["ProductList - needs cartItems"]
+  P --> B["CartSummary - needs cartItems"]
+  Q(["? How do they share it ?"])
+  A -.-> Q
+  B -.-> Q
