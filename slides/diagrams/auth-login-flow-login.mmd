@@ -1,0 +1,6 @@
+flowchart LR
+  Client["Client (Ionic app)"] -->|"1. POST /login"| Verify["passport-local: bcrypt.compare"]
+  Verify -->|"2. credentials valid"| Sign["Server signs and returns a JWT"]
+
+  classDef highlight fill:#d4edda,stroke:#2e7d32,color:#000
+  class Sign highlight

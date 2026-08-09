@@ -1,0 +1,7 @@
+flowchart LR
+  Store["Client has stored the JWT"] -->|"3. Authorization: Bearer JWT"| Guard["passport-jwt: verifies signature"]
+  Guard -->|"4. token valid"| Protected["Protected route, e.g. GET /me"]
+  Protected -.->|"repeats for the next request"| Store
+
+  classDef highlight fill:#d4edda,stroke:#2e7d32,color:#000
+  class Guard highlight
