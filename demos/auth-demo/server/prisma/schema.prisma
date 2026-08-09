@@ -1,0 +1,18 @@
+// SQLite here is a demo-only simplification for zero local setup.
+// The capstone stack uses PostgreSQL (see ../../../project_specs/capstone.md);
+// swapping back only means changing this datasource block.
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+}
